@@ -17,10 +17,22 @@ describe("Application", () => {
     });
     expect(sectionHeading).toBeInTheDocument();
 
+    // getByText search for all the elements that have a text node with textContent matching the given text
+    // we use it to find div, p or span elements
+
+    const textElement = screen.getByText("All fields are mandatory");
+    expect(textElement).toBeInTheDocument();
+
+    const customElement = screen.getByTestId("custom-element");
+    expect(customElement).toBeInTheDocument();
+
     const nameElement = screen.getByRole("textbox", {
       name: "Name",
     });
     expect(nameElement).toBeInTheDocument();
+
+    const nameElement2 = screen.getByDisplayValue("Amir");
+    expect(nameElement2).toBeInTheDocument();
 
     const bioElement = screen.getByRole("textbox", {
       name: "Bio",

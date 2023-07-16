@@ -5,6 +5,8 @@ const Application = () => {
     <div>
       <h1>Job Application Form</h1>
       <h2>Section 1</h2>
+      <p>All fields are mandatory</p>
+      <div data-testId="custom-element"> Custom HTML Element</div>
       <form
         style={{
           display: "flex",
@@ -15,7 +17,7 @@ const Application = () => {
       >
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" />
+          <input type="text" id="name" value={"Amir"} onChange={() => {}} />
         </div>
         <div>
           <label htmlFor="bio">Bio</label>
